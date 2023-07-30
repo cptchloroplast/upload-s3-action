@@ -25,10 +25,14 @@ const DESTINATION_DIR = core.getInput('destination_dir', {
 const ENDPOINT = core.getInput('endpoint', {
   required: false,
 });
+const REGION = core.getInput('region', {
+  required: false
+})
 
 const s3options = {
   accessKeyId: AWS_KEY_ID,
   secretAccessKey: SECRET_ACCESS_KEY,
+  region: REGION,
 };
 
 if (ENDPOINT) {
